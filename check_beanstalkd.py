@@ -67,7 +67,7 @@ def main(argv):
             s = beanstalk.stats_tube(tube)
             v = s[stat]
             if v < warning:
-                print('OK tube %s | s%=%d' % (tube, stat, v))
+                print('OK tube %s | %s=%d' % (tube, stat, v))
                 returnValue = 0
             elif v < critical:
                 print('WARNING tube %s | s%=%d' % (tube, stat, v))
