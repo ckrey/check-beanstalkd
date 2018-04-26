@@ -53,13 +53,13 @@ def main(argv):
             s = beanstalk.stats()
             v = s[stat]
             if v < warning:
-                print('OK beanstalkd %s=%d | %s=%d' % (stat, v, stat, v))
+                print('OK beanstalkd %s=%d | %s=%d;%d;%d;' % (stat, v, stat, v, warning, critical))
                 returnValue = 0
             elif v < critical:
-                print('WARNING beanstalkd %s=%d | %s=%d' % (stat, v, stat, v))
+                print('WARNING beanstalkd %s=%d | %s=%d;%d;%d;' % (stat, v, stat, v, warning, critical))
                 returnValue = 1
             else:
-                print('CRITICAL beanstalkd %s=%d | %s=%d' % (stat, v, stat, v))
+                print('CRITICAL beanstalkd %s=%d | %s=%d;%d;%d;' % (stat, v, stat, v, warning, critical))
                 returnValue = 2
 
         else:
@@ -67,13 +67,13 @@ def main(argv):
             s = beanstalk.stats_tube(tube)
             v = s[stat]
             if v < warning:
-                print('OK tube %s %s=%d | tube=%s %s=%d' % (tube, stat, v, tube, stat, v))
+                print('OK tube %s %s=%d | %s-%s=%d;%d;%d;' % (tube, stat, v, tube, stat, v, warning, critical))
                 returnValue = 0
             elif v < critical:
-                print('WARNING tube %s %s=%d | tube=%s %s=%d' % (tube, stat, v, tube, stat, v))
+                print('WARNING tube %s %s=%d | %s-%s=%d;%d;%d;' % (tube, stat, v, tube, stat, v, warning, critical))
                 returnValue = 1
             else:
-                print('CRITICAL tube %s %s=%d | tube=%s %s=%d' % (tube, stat, v, tube, stat, v))
+                print('CRITICAL tube %s %s=%d | %s-%s=%d;%d;%d' % (tube, stat, v, tube, stat, v, warning, critical))
                 returnValue = 2
 
     except:
