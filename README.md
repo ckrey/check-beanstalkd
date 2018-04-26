@@ -23,7 +23,7 @@ usage: check-beanstalkd.py
 
 ```
 $ ./check_beanstalkd.py -h localhost -p 11300 -w 5 -c 10 -s current-jobs-buried
-WARNING beanstalkd | current-jobs-buried=6
+WARNING beanstalkd | current-jobs-buried=6;5;10;
 ```
 
 
