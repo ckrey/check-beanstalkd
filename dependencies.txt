@@ -1,2 +1,2 @@
 PyYAML
-beanstalkd3
+beanstalkc3
