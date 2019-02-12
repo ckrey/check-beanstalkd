@@ -6,13 +6,13 @@ import sys
 import getopt
 
 def usage():
-    print "check-beanstalkd.py"
-    print "\t[-h hostname/address]   // default localhost"
-    print "\t[-p port]               // default 11300"
-    print "\t[-w warning-threshold]  // default 8"
-    print "\t[-c critical-threshold] // default 10"
-    print "\t[-t tubename]           // default None"
-    print "\t[-s stats entry]        // default current-jobs-ready" 
+    print("check-beanstalkd.py")
+    print("\t[-h hostname/address]   // default localhost")
+    print("\t[-p port]               // default 11300")
+    print("\t[-w warning-threshold]  // default 8")
+    print("\t[-c critical-threshold] // default 10")
+    print("\t[-t tubename]           // default None")
+    print("\t[-s stats entry]        // default current-jobs-ready") 
     sys.exit(3)
 
 def main(argv):
@@ -28,7 +28,7 @@ def main(argv):
         opts, args = getopt.getopt(argv, "h:p:t:w:c:s:")
     except getopt.GetoptError as e:
         usage();
-        print "UNKNOWN"
+        print("UNKNOWN")
         sys.exit(3)
 
     for opt, arg in opts:
