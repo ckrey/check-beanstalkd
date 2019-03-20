@@ -46,7 +46,7 @@ def main(argv):
             critical = int(arg)
 
     try:
-        beanstalk = beanstalkc.Connection(host=host, port=port)
+        beanstalk = beanstalkc.Connection(host=host, port=port, parse_yaml=False)
 
         if tube == None:
             #pprint(beanstalk.stats())
