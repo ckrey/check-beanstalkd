@@ -1,2 +1,2 @@
 PyYAML
-beanstalkc3
+beanstalkc3-ot
